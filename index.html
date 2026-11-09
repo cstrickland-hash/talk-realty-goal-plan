@@ -120,6 +120,20 @@ footer .wordmark{color:var(--cream);font-size:34px}
 footer .tag{font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);margin-top:26px}
 footer small{display:block;margin-top:18px;font-size:12px;color:#8E8A82;font-weight:300}
 #print{display:none}
+.smart{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.sc{border:1px solid rgba(201,169,110,.4);padding:34px 24px 30px;background:rgba(255,255,255,.02)}
+.sc .L{font-family:var(--serif);font-size:54px;line-height:1;color:var(--gold);font-weight:300}
+.sc .W{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#CFC8B8;margin:12px 0 18px;padding-bottom:16px;border-bottom:1px solid rgba(201,169,110,.35)}
+.sc p{margin:0 0 10px;font-family:var(--serif);font-size:18px;line-height:1.45;color:var(--cream);font-weight:300}
+.sc p b{color:var(--gold);font-weight:500}
+.sc ul{list-style:none;margin:0;padding:0;font-size:14px;color:#E4DDCD}
+.sc li{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.sc li b{font-family:var(--serif);font-size:18px;font-weight:400;color:var(--cream)}
+.sc small{display:block;margin-top:12px;font-size:12px;color:#A9A394;font-style:italic}
+.smart-hours{max-width:520px;margin:48px auto 0}
+.smart-hours input::placeholder{color:#7D8598}
+@media (max-width:1100px){.smart{grid-template-columns:repeat(2,1fr)}.smart .sc:last-child{grid-column:1/-1}}
+@media (max-width:640px){.smart{grid-template-columns:1fr}}
 .adj summary{cursor:pointer;list-style:none;text-align:center;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--navy);padding:6px}
 .adj summary::-webkit-details-marker{display:none}
 .adj summary:after{content:" +";color:var(--gold-d)}.adj[open] summary:after{content:" –"}
@@ -153,7 +167,7 @@ footer small{display:block;margin-top:18px;font-size:12px;color:#8E8A82;font-wei
 <body>
 <header class="top"><div class="wrap">
   <a class="wordmark" href="#top">talk<span>Realty</span></a>
-  <nav class="links"><a href="#start">Goal</a><a href="#results">Results</a><a href="#plan">Game Plan</a><a href="#life">Whole Life</a><a href="#commit">Commit</a></nav>
+  <nav class="links"><a href="#start">Goal</a><a href="#results">Results</a><a href="#smart">SMART</a><a href="#plan">Game Plan</a><a href="#life">Whole Life</a><a href="#commit">Commit</a></nav>
 </div></header>
 
 <div class="hero" id="top">
@@ -209,6 +223,12 @@ footer small{display:block;margin-top:18px;font-size:12px;color:#8E8A82;font-wei
   <div class="stretch" id="stretch"></div>
   <div class="callout"><div class="k">Reality Check</div><p id="coaching"></p></div>
   </div>
+</div></section>
+
+<section class="blk" id="smart" style="background:var(--navy);color:var(--cream)"><div class="wrap">
+  <div class="sh"><div class="num" style="color:var(--gold)">✦</div><h2 style="color:var(--cream)">Your SMART Goal</h2><p style="color:#CFC8B8">Specific, Measurable, Achievable, Realistic, Time-bound. Built from your numbers.</p><hr class="rule"></div>
+  <div class="smart" id="smartCards"></div>
+  <div class="smart-hours"><div class="field"><label style="color:#CFC8B8">Hours a week I will block for prospecting (optional)</label><div class="box" style="border-bottom-color:#4A5670"><input id="hours" inputmode="decimal" placeholder="e.g. 10" style="color:var(--cream)"></div><div class="hint" id="hoursNote" style="color:#CFC8B8"></div></div></div>
 </div></section>
 
 <section class="blk cream" id="plan"><div class="wrap">
@@ -332,6 +352,7 @@ function calc(){
     $("perDealLine").textContent=computedPerDeal>0?`Your average take-home per deal is ${money(perDeal)}.`:"Fill in your numbers above and your plan builds itself.";
     $("calcHint").textContent=computedPerDeal>0?`Calculated: ${money(computedPerDeal)}. Type a number to override.`:"Calculated from price, rate and split.";
     $("recs").innerHTML=`<div class="rec"><div class="tag">Waiting on your numbers</div><h4>Your recommendations appear here</h4><p>Complete the goal and funnel fields above.</p></div>`;
+    $("smartCards").innerHTML=`<div class="sc" style="grid-column:1/-1;text-align:center"><p>Your SMART goal appears here once your numbers are complete.</p></div>`;$("hoursNote").textContent="";
     $("bars").innerHTML="";$("tips").innerHTML="";$("mixWarn").textContent="";$("stretch").textContent="";
     return;
   }
@@ -391,6 +412,24 @@ function calc(){
   $("stretch").textContent=gap;
   const name=$("agentName").value.trim(),nn=$("nonNeg").value.trim();
   $("pledge").textContent=name&&nn?`“I, ${name}, commit to ${nn} every week in 2027.”`:"";
+  // SMART
+  const q=[1,2,3,4].map(i=>Math.round(closings*i/4));const qd=q.map((c,i)=>c-(i?q[i-1]:0));
+  const dpd=dials/wk/5,cpd=convos/wk/5;
+  const load=dpd<=25?"comfortable":dpd<=40?"committed":"heavy";
+  const achNote=dpd<=25?"A steady, sustainable pace. Protect the time block and it is very doable.":dpd<=40?"A committed pace. It works with a daily block you never skip.":"That is a heavy daily load. Consider leaning on sphere and open houses, improving a conversion ratio, or adjusting the goal.";
+  const ranked=deals.filter(d=>d.s>0).sort((a,b)=>b.s-a.s);
+  const topTwo=ranked.slice(0,2).map(d=>`${d.k} (${Math.round(d.s)}%)`).join(" and ")||"your lead sources";
+  const hrs=num($("hours").value);
+  $("hoursNote").textContent=hrs>0?`${hrs} hours a week means about ${up(dials/wk/hrs)} dials and ${up(convos/wk/hrs)} conversations per hour blocked.`:"Add your hours to see what each hour needs to produce.";
+  const priceTxt=price>=1e6?"$"+(price/1e6).toFixed(2).replace(/\.?0+$/,"")+"M":money(price);
+  const smart=[
+   ["S","Specific",`<p>Close <b>${closings} sale${closings===1?"":"s"}</b> at about <b>${priceTxt}</b> for <b>${money(netIncome)}</b> in 2027.</p><small>${money(volume)} in volume.</small>`],
+   ["M","Measurable",`<ul><li>Dials / week<b>${up(dials/wk)}</b></li><li>Conversations / week<b>${up(convos/wk)}</b></li><li>Appointments / week<b>${up(appts/wk)}</b></li>${qd.map((d,i)=>`<li>Q${i+1} deals<b>${d}</b></li>`).join("")}</ul>`],
+   ["A","Achievable",`<p>About <b>${up(dpd)} dials</b> and <b>${up(cpd)} conversations</b> a day reads as a <b>${load}</b> pace.</p><p style="font-size:16px">${achNote}</p><small>Coaching guidelines, not data: up to 25 dials a day comfortable, 26 to 40 committed, over 40 heavy.</small>`],
+   ["R","Realistic",`<p>Most of your deals come from <b>${topTwo}</b>, over <b>${wk} working weeks</b>.</p><p style="font-size:16px">${hrs>0?`You have blocked <b>${hrs} hours</b> a week. Make sure that fits your real calendar.`:"Confirm the hours you will block each week below."}</p>`],
+   ["T","Time-bound",`<p><b>Jan 1 to Dec 31, 2027.</b> Monthly target: <b>${up(closings/12)} deals</b> and <b>${up(appts/12)} appointments</b>.</p><ul><li>Mar 31 check-in<b>${q[0]}</b></li><li>Jun 30 check-in<b>${q[1]}</b></li><li>Sep 30 check-in<b>${q[2]}</b></li><li>Dec 31 finish<b>${q[3]}</b></li></ul><small>Cumulative deals by each date.</small>`]
+  ];
+  $("smartCards").innerHTML=smart.map(([l,w,h])=>`<div class="sc"><div class="L">${l}</div><div class="W">${w}</div>${h}</div>`).join("");
   // print
   const v=id=>esc($(id).value.trim()||"—");
   const goalTxt=mode==="income"?money(g)+" income":mode==="volume"?money(g)+" volume":g+" closings";
@@ -402,6 +441,7 @@ function calc(){
   <div><h2>Game plan</h2>${recs.map(r=>"• "+esc(r.h)).join("<br>")}</div></div>
   <div class="cols"><div><h2>Whole life</h2>Behavior to change: ${v("behavior")}<br>Fitness: ${v("fitNow")} → ${v("fitTarget")}, ${v("workouts")} workouts/week<br>Habit: ${v("habit")}<br>Quality time: ${v("family")} hrs/week<br>Relationship: ${v("relationship")}</div>
   <div><h2>Commitment</h2>${name&&nn?`I, ${esc(name)}, commit to ${esc(nn)} every week in 2027.`:"Weekly non-negotiable: "+v("nonNeg")}</div></div>
+  <h2>SMART goal</h2><b>S</b> Close ${closings} sales at about ${priceTxt} for ${money(netIncome)} in 2027. · <b>M</b> ${up(dials/wk)} dials, ${up(convos/wk)} conversations, ${up(appts/wk)} appointments a week; quarterly deals ${qd.join(" / ")}. · <b>A</b> ${up(dpd)} dials a day, a ${load} pace. · <b>R</b> Mostly ${topTwo}, ${wk} working weeks${hrs>0?`, ${hrs} hrs/week blocked`:""}. · <b>T</b> Jan 1 to Dec 31, 2027; check-ins Mar 31 (${q[0]}), Jun 30 (${q[1]}), Sep 30 (${q[2]}), Dec 31 (${q[3]}).
   ${$("letter").value.trim()?`<h2>Future Self Letter</h2><div class="letter">${esc($("letter").value.trim())}</div>`:""}
   <div class="foot">Built for the Talk Realty team · example ratios, not industry data</div>`;
 }
