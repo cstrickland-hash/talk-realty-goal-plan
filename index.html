@@ -76,7 +76,7 @@ textarea.letter:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,169
 .card .split b{display:block;font-family:var(--serif);font-weight:400;font-size:22px;color:var(--navy)}
 .card .split small{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
 .card.daily{background:var(--navy);border-color:var(--navy);color:var(--cream)}
-.card.daily h3,.card.daily .yl{color:var(--gold)}.card.daily .yr{color:var(--cream)}
+.card.daily h3,.card.daily .yl,.card.daily .split small{color:var(--gold)}.card.daily .split b{color:var(--cream)}.card.daily .split{border-top-color:rgba(201,169,110,.35)}.card.daily .yr{color:var(--cream)}
 .callout{max-width:780px;margin:64px auto 0;text-align:center;padding:40px 36px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
 .callout .k{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-d)}
 .callout p{font-family:var(--serif);font-size:23px;font-weight:300;line-height:1.5;color:var(--navy);margin:14px 0 0}
@@ -120,6 +120,8 @@ footer .wordmark{color:var(--cream);font-size:34px}
 footer .tag{font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);margin-top:26px}
 footer small{display:block;margin-top:18px;font-size:12px;color:#8E8A82;font-weight:300}
 #print{display:none}
+.cvr{text-align:center;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);margin:26px 0 0}
+.cvr b{font-family:var(--serif);font-size:20px;letter-spacing:0;text-transform:none;color:var(--gold-d);font-weight:500}
 .smart{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
 .sc{border:1px solid rgba(201,169,110,.4);padding:34px 24px 30px;background:rgba(255,255,255,.02)}
 .sc .L{font-family:var(--serif);font-size:54px;line-height:1;color:var(--gold);font-weight:300}
@@ -200,11 +202,12 @@ footer small{display:block;margin-top:18px;font-size:12px;color:#8E8A82;font-wei
   <details class="adj"><summary>Adjust assumptions</summary><p class="adjnote">Example ratios, adjust to your own numbers. These are starting defaults, not industry data.</p>
   <div class="grid g5">
     <div class="field"><label>Closings per signed client</label><div class="box"><input id="closeRate" inputmode="decimal" value="80"><span class="suf">%</span></div></div>
-    <div class="field"><label>Signed per appointment</label><div class="box"><input id="apptRate" inputmode="decimal" value="50"><span class="suf">%</span></div></div>
-    <div class="field"><label>Conversations per appt</label><div class="box"><input id="convPerAppt" inputmode="decimal" value="10"></div></div>
+    <div class="field"><label>Signed per appointment</label><div class="box"><input id="apptRate" inputmode="decimal" value="25"><span class="suf">%</span></div></div>
+    <div class="field"><label>Conversations per appt</label><div class="box"><input id="convPerAppt" inputmode="decimal" value="5"></div></div>
     <div class="field"><label>Dials per conversation</label><div class="box"><input id="dialsPerConv" inputmode="decimal" value="10"></div></div>
     <div class="field"><label>Working weeks / year</label><div class="box"><input id="weeks" inputmode="decimal" value="48"></div></div>
   </div></details>
+  <p class="cvr" id="cvrA"></p>
 </div></section>
 
 <section class="blk" id="results"><div class="wrap">
@@ -212,6 +215,7 @@ footer small{display:block;margin-top:18px;font-size:12px;color:#8E8A82;font-wei
   <div class="guard" id="guard"></div>
   <div id="out">
   <p class="expect-line" id="expectLine"></p>
+  <p class="cvr" id="cvrR" style="margin:-40px 0 56px"></p>
   <div class="headline">
     <div class="c"><div class="v" id="hClosings"></div><div class="l">Closings per year</div><div class="d" id="hClosingsD"></div></div>
     <div class="c"><div class="v" id="hDaily"></div><div class="l">Dials per day</div><div class="d">five-day week</div></div>
@@ -348,7 +352,7 @@ function calc(){
   if(wkRaw<1||wkRaw>52)miss.push("working weeks between 1 and 52");
   if(miss.length){
     const list=miss.length>1?miss.slice(0,-1).join(", ")+" and "+miss[miss.length-1]:miss[0];
-    $("guard").textContent=`Add ${list} to see your plan.`;$("guard").classList.add("on");$("out").classList.add("off");
+    $("cvrA").textContent="";$("guard").textContent=`Add ${list} to see your plan.`;$("guard").classList.add("on");$("out").classList.add("off");
     $("perDealLine").textContent=computedPerDeal>0?`Your average take-home per deal is ${money(perDeal)}.`:"Fill in your numbers above and your plan builds itself.";
     $("calcHint").textContent=computedPerDeal>0?`Calculated: ${money(computedPerDeal)}. Type a number to override.`:"Calculated from price, rate and split.";
     $("recs").innerHTML=`<div class="rec"><div class="tag">Waiting on your numbers</div><h4>Your recommendations appear here</h4><p>Complete the goal and funnel fields above.</p></div>`;
@@ -357,6 +361,10 @@ function calc(){
     return;
   }
   $("guard").classList.remove("on");$("out").classList.remove("off");
+  const a2c=closeRate*apptRate/100, cvr=a2c/cpa;
+  const fmtP=x=>(Math.round(x*10)/10).toFixed(1)+"%";
+  const cvrHtml=`Your overall CVR: <b>${fmtP(cvr)}</b> of conversations become closings &nbsp;·&nbsp; Appointment to close: <b>${fmtP(a2c)}</b>`;
+  $("cvrA").innerHTML=cvrHtml;$("cvrR").innerHTML=cvrHtml;
   const closings=Math.ceil(raw-1e-9);
   const signed=Math.ceil(closings/(closeRate/100)-1e-9);
   const appts=Math.ceil(signed/(apptRate/100)-1e-9);
@@ -435,6 +443,7 @@ function calc(){
   const goalTxt=mode==="income"?money(g)+" income":mode==="volume"?money(g)+" volume":g+" closings";
   $("print").innerHTML=`<h1>${name?esc(name)+"'s ":""}12 Month Clarity Plan</h1><div class="sub">Cheers to 2027 · talk Realty</div>
   <div>Goal: <b>${goalTxt}</b> · ${money(perDeal)} per deal · ${money(volume)} volume · ${money(gci)} gross commission · ${money(netIncome)} income</div>
+  <div>Overall CVR ${fmtP(cvr)} of conversations become closings · appointment to close ${fmtP(a2c)}</div>
   <h2>Activity plan</h2><table><tr><th>Activity</th><th>Year</th><th>Month</th><th>Week</th></tr>${rows.map(([l,x])=>`<tr><td>${l}</td><td>${x.toLocaleString("en-US")}</td><td>${up(x/12)}</td><td>${up(x/wk)}</td></tr>`).join("")}</table>
   <div style="margin-top:4px">Daily: <b>${up(dailyDials)} dials</b>, ${blockHours} hour prospecting block. ${esc(gap)}</div>
   <div class="cols"><div><h2>Lead sources</h2>${deals.map(d=>`${d.k}: ${Math.round(d.s)}% · ${up(d.d)} deals · ${up(d.a)} appts`).join("<br>")}</div>
