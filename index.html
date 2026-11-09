@@ -204,7 +204,7 @@ footer small{display:block;margin-top:18px;font-size:12px;color:#8E8A82;font-wei
     <div class="field"><label>Closings per signed client</label><div class="box"><input id="closeRate" inputmode="decimal" value="80"><span class="suf">%</span></div></div>
     <div class="field"><label>Signed per appointment</label><div class="box"><input id="apptRate" inputmode="decimal" value="25"><span class="suf">%</span></div></div>
     <div class="field"><label>Conversations per appt</label><div class="box"><input id="convPerAppt" inputmode="decimal" value="5"></div></div>
-    <div class="field"><label>Dials per conversation</label><div class="box"><input id="dialsPerConv" inputmode="decimal" value="10"></div></div>
+    <div class="field"><label>Dials per conversation</label><div class="box"><input id="dialsPerConv" inputmode="decimal" value="20"></div></div>
     <div class="field"><label>Working weeks / year</label><div class="box"><input id="weeks" inputmode="decimal" value="48"></div></div>
   </div></details>
   <p class="cvr" id="cvrA"></p>
@@ -384,7 +384,7 @@ function calc(){
   const rows=[["Closings",closings],["Signed clients",signed],["Appointments",appts],["Conversations",convos],["Dials / contacts",dials]];
   $("cards").innerHTML=rows.map(([l,v])=>`<div class="card"><h3>${l}</h3><div class="yr">${v.toLocaleString("en-US")}</div><div class="yl">per year</div><div class="split"><div><b>${up(v/12)}</b><small>Month</small></div><div><b>${up(v/wk)}</b><small>Week</small></div></div></div>`).join("")+
     `<div class="card daily"><h3>Every weekday</h3><div class="yr">${up(dailyDials)}</div><div class="yl">dials per day</div><div class="split"><div><b>${up(convos/wk/5)}</b><small>Convos</small></div><div><b>${up(appts/wk)}</b><small>Appts / wk</small></div></div></div>`;
-  $("coaching").textContent=dailyDials>60?"That is a heavy daily outreach load. Consider raising your average price, lifting a conversion ratio with better follow-up, or leaning harder on sphere and referrals.":dailyDials>25?"Doable with a protected daily prospecting block. Put it on your calendar first, before anything else.":"Very achievable. Consistency is the whole game, so lock in a daily time block and track it weekly.";
+  $("coaching").textContent=dailyDials>40?"That is a heavy daily outreach load. Consider raising your average price, lifting a conversion ratio with better follow-up, or leaning harder on sphere and referrals.":dailyDials>25?"Doable with a protected daily prospecting block. Put it on your calendar first, before anything else.":"Very achievable. Consistency is the whole game, so lock in a daily time block and track it weekly.";
   $("expectLine").innerHTML=`To hit your goal, expect <b>${closings} deal${closings===1?"":"s"}</b> this year, <b>${up(appts/12)} appointments a month</b>, <b>${up(appts/wk)} a week</b>, and about <b>${up(convos/wk/5)} conversations a day</b>.`;
   $("coachLines").innerHTML=[
     `You need <b>${up(appts/wk)} appointments a week</b>, about <b>${up(convos/wk/5)} conversations a day</b>.`,
