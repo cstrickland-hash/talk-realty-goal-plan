@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your 12 Month Clarity Plan · talk Realty</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2712%27 fill=%27%230E1A2F%27/%3E%3Ctext x=%2732%27 y=%2744%27 font-family=%27Georgia,serif%27 font-size=%2738%27 text-anchor=%27middle%27 fill=%27%23C9A96E%27%3Et%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0E1A2F;--navy2:#16233B;--gold:#C9A96E;--gold-d:#9C7F47;--cream:#F7F3E8;--white:#fff;--ink:#1C2333;--muted:#6B6E76;--line:#E6DFCF;
+--serif:'Newsreader',Georgia,'Times New Roman',serif;--sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+header.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:16px}
+.wordmark{font-family:var(--serif);font-size:30px;letter-spacing:-.01em;color:var(--navy);text-decoration:none;line-height:1}
+.wordmark span{font-family:var(--sans);font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:var(--gold-d);margin-left:10px;vertical-align:middle}
+nav.links{display:flex;flex-wrap:wrap;gap:28px;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+nav.links a{text-decoration:none;color:var(--muted)}nav.links a:hover{color:var(--navy)}
+.hero{position:relative;overflow:hidden;background:var(--navy);color:var(--cream);text-align:center;padding:130px 24px 120px}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.8}
+.hero .frame{position:absolute;inset:22px;border:1px solid rgba(201,169,110,.35);pointer-events:none}
+.hero .in{position:relative;max-width:820px;margin:0 auto}
+.eyebrow{font-size:12px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold)}
+.rule{width:64px;height:1px;background:var(--gold);margin:28px auto;border:0}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(42px,7vw,84px);line-height:1.04;margin:0;letter-spacing:-.015em}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero p{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(18px,2.2vw,23px);color:#D8D1C1;margin:22px auto 0;max-width:600px}
+.btn{display:inline-block;font-family:var(--sans);font-size:12px;letter-spacing:.26em;text-transform:uppercase;padding:17px 34px;border:1px solid var(--gold);background:transparent;color:var(--gold);cursor:pointer;text-decoration:none;transition:.25s}
+.btn:hover{background:var(--gold);color:var(--navy)}
+.btn.solid{background:var(--navy);color:var(--cream);border-color:var(--navy)}.btn.solid:hover{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.hero .btn{margin-top:44px}
+section.blk{padding:110px 0;border-bottom:1px solid var(--line)}
+section.blk.cream{background:var(--cream)}
+.sh{text-align:center;max-width:720px;margin:0 auto 64px}
+.sh .num{font-family:var(--serif);font-style:italic;color:var(--gold-d);font-size:18px}
+.sh h2{font-family:var(--serif);font-weight:300;font-size:clamp(32px,4.4vw,52px);line-height:1.1;margin:10px 0 0;color:var(--navy);letter-spacing:-.01em}
+.sh p{color:var(--muted);margin:20px auto 0;max-width:580px;font-weight:300;font-size:17px}
+.sh .rule{margin:26px auto 0}
+.toggle{display:flex;flex-wrap:wrap;justify-content:center;gap:0;margin:0 auto 56px;border:1px solid var(--navy);width:fit-content;max-width:100%}
+.toggle button{font-family:var(--sans);font-size:12px;letter-spacing:.2em;text-transform:uppercase;padding:15px 26px;border:0;background:transparent;color:var(--navy);cursor:pointer;transition:.2s}
+.toggle button.on{background:var(--navy);color:var(--cream)}
+.grid{display:grid;gap:40px 44px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g5{grid-template-columns:repeat(5,1fr)}
+.field label{display:block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;font-weight:500}
+.field .box{position:relative;display:flex;align-items:center;border-bottom:1px solid #CFC6B3;transition:.25s}
+.field .box:focus-within{border-bottom-color:var(--gold);box-shadow:0 1px 0 0 var(--gold)}
+.field .pre,.field .suf{font-family:var(--serif);font-size:24px;color:var(--gold-d);padding:0 6px 0 0}
+.field .suf{padding:0 0 0 6px}
+.field input,.field textarea{width:100%;border:0;outline:0;background:transparent;font-family:var(--serif);font-size:26px;font-weight:400;color:var(--navy);padding:8px 0 10px}
+.field input.txt{font-size:20px}
+.field input::placeholder,.field textarea::placeholder{color:#B5AE9F;font-style:italic;font-weight:300}
+.field .hint{font-size:13px;color:var(--muted);margin-top:8px;font-weight:300}
+.field.wide{grid-column:1/-1}
+textarea.letter{width:100%;min-height:300px;border:1px solid #D9D0BD;background:var(--white);padding:28px;font-family:var(--serif);font-size:20px;line-height:1.7;color:var(--navy);outline:0;transition:.25s;resize:vertical}
+textarea.letter:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,169,110,.18)}
+.note{font-family:var(--serif);font-style:italic;text-align:center;color:var(--gold-d);font-size:17px;margin:0 0 44px}
+.headline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);margin-bottom:72px;background:var(--white)}
+.headline .c{padding:44px 22px;text-align:center;border-right:1px solid var(--line)}
+.headline .c:last-child{border-right:0}
+.headline .v{font-family:var(--serif);font-weight:300;font-size:clamp(34px,4vw,52px);line-height:1;color:var(--navy)}
+.headline .l{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:16px}
+.headline .d{font-family:var(--serif);font-style:italic;color:var(--gold-d);margin-top:6px;font-size:15px}
+.cards{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.card{background:var(--white);border:1px solid var(--line);padding:34px 22px 28px;text-align:center;position:relative}
+.card:before{content:"";position:absolute;top:-1px;left:50%;transform:translateX(-50%);width:40px;height:2px;background:var(--gold)}
+.card h3{margin:0 0 22px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.card .yr{font-family:var(--serif);font-weight:300;font-size:46px;line-height:1;color:var(--navy)}
+.card .yl{font-size:11px;color:var(--muted);letter-spacing:.18em;text-transform:uppercase;margin-top:8px}
+.card .split{display:flex;justify-content:space-around;border-top:1px solid var(--line);margin-top:24px;padding-top:18px}
+.card .split b{display:block;font-family:var(--serif);font-weight:400;font-size:22px;color:var(--navy)}
+.card .split small{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.card.daily{background:var(--navy);border-color:var(--navy);color:var(--cream)}
+.card.daily h3,.card.daily .yl{color:var(--gold)}.card.daily .yr{color:var(--cream)}
+.callout{max-width:780px;margin:64px auto 0;text-align:center;padding:40px 36px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
+.callout .k{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-d)}
+.callout p{font-family:var(--serif);font-size:23px;font-weight:300;line-height:1.5;color:var(--navy);margin:14px 0 0}
+.stretch{margin-top:44px;text-align:center;font-family:var(--serif);font-style:italic;font-size:20px;color:var(--navy)}
+.recs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
+.rec{background:var(--white);border:1px solid var(--line);padding:38px 34px}
+.rec .tag{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-d)}
+.rec h4{font-family:var(--serif);font-weight:400;font-size:25px;line-height:1.25;color:var(--navy);margin:12px 0 10px}
+.rec p{margin:0;color:var(--muted);font-weight:300}
+.rec.warn{border-color:var(--gold)}
+.expect{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line)}
+.expect div{padding:40px 28px;border-right:1px solid var(--line)}.expect div:last-child{border-right:0}
+.expect .n{font-family:var(--serif);font-style:italic;font-size:38px;color:var(--gold);line-height:1}
+.expect h4{font-family:var(--serif);font-weight:400;font-size:23px;color:var(--navy);margin:18px 0 10px;line-height:1.25}
+.expect p{margin:0;color:var(--muted);font-weight:300;font-size:15px}
+.small-caps{text-align:center;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-top:36px}
+.mixwarn{margin:30px 0 0;text-align:center;font-family:var(--serif);font-style:italic;color:var(--gold-d);font-size:18px}
+.bars{margin-top:60px;display:grid;gap:22px}
+.bar{display:grid;grid-template-columns:150px 1fr 220px;align-items:center;gap:20px}
+.bar .bl{font-family:var(--serif);font-size:19px;color:var(--navy)}
+.bar .track{height:10px;background:#EFE9DA;position:relative}
+.bar .fill{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,var(--gold-d),var(--gold));transition:width .5s ease}
+.bar .bv{text-align:right;font-family:var(--serif);font-size:18px;color:var(--navy)}
+.tips{margin-top:64px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}
+.tip{border-top:1px solid var(--gold);padding-top:18px}
+.tip h5{margin:0 0 8px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--navy);font-weight:600}
+.tip p{margin:0;color:var(--muted);font-size:14px;font-weight:300}
+.prompts{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;margin:0 0 34px;font-family:var(--serif);font-style:italic;color:var(--gold-d);font-size:18px}
+.pledge{margin-top:46px;text-align:center;font-family:var(--serif);font-size:clamp(22px,3vw,32px);font-weight:300;font-style:italic;color:var(--navy);line-height:1.4;min-height:1em}
+.checks{max-width:720px;margin:0 auto;display:grid;gap:0}
+.check{display:flex;align-items:center;gap:22px;padding:24px 4px;border-bottom:1px solid var(--line);cursor:pointer;user-select:none}
+.check:first-child{border-top:1px solid var(--line)}
+.check input{appearance:none;-webkit-appearance:none;width:24px;height:24px;flex:0 0 24px;border:1px solid var(--gold-d);margin:0;position:relative;cursor:pointer;transition:.2s}
+.check input:checked{background:var(--navy);border-color:var(--navy)}
+.check input:checked:after{content:"";position:absolute;left:8px;top:3px;width:6px;height:12px;border:solid var(--gold);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.check span{font-family:var(--serif);font-size:21px;color:var(--navy)}
+.check input:checked+span{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--gold)}
+.printrow{text-align:center;margin-top:64px}
+footer{background:var(--navy);color:#B9B3A6;text-align:center;padding:80px 24px 70px}
+footer .wordmark{color:var(--cream);font-size:34px}
+footer .tag{font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);margin-top:26px}
+footer small{display:block;margin-top:18px;font-size:12px;color:#8E8A82;font-weight:300}
+#print{display:none}
+.adj summary{cursor:pointer;list-style:none;text-align:center;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--navy);padding:6px}
+.adj summary::-webkit-details-marker{display:none}
+.adj summary:after{content:" +";color:var(--gold-d)}.adj[open] summary:after{content:" –"}
+.adj .adjnote{text-align:center;color:var(--muted);font-weight:300;margin:18px 0 44px}
+.expect-line{max-width:820px;margin:0 auto 64px;text-align:center;font-family:var(--serif);font-weight:300;font-size:clamp(24px,3.2vw,36px);line-height:1.35;color:var(--navy)}
+.expect-line b{font-weight:500;color:var(--gold-d)}
+.guard{display:none;max-width:680px;margin:0 auto 40px;text-align:center;padding:36px 30px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);font-family:var(--serif);font-style:italic;font-size:21px;color:var(--navy)}
+.guard.on{display:block}#out.off{display:none}
+.coach{list-style:none;max-width:780px;margin:56px auto 0;padding:0}
+.coach li{font-family:var(--serif);font-size:21px;font-weight:300;color:var(--navy);padding:16px 0 16px 34px;border-bottom:1px solid var(--line);position:relative;line-height:1.45}
+.coach li:before{content:"✦";position:absolute;left:4px;top:17px;color:var(--gold);font-size:14px}
+.coach li b{font-weight:500}
+@media (max-width:980px){.g4,.g5{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:repeat(3,1fr)}.headline{grid-template-columns:repeat(2,1fr)}.headline .c:nth-child(2){border-right:0}.headline .c:nth-child(-n+2){border-bottom:1px solid var(--line)}.expect{grid-template-columns:repeat(2,1fr)}.expect div:nth-child(2){border-right:0}.expect div{border-bottom:1px solid var(--line)}}
+@media (max-width:640px){.wrap{padding:0 22px}nav.links{display:none}.g2,.g3,.g4,.g5,.recs,.expect{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr;gap:14px}.card{padding:26px 12px 20px}.card .yr{font-size:36px}.expect div{border-right:0}section.blk{padding:76px 0}.hero{padding:100px 22px 90px}.bar{grid-template-columns:96px 1fr;gap:10px 14px}.bar .bv{grid-column:2;text-align:left;font-size:15px;margin-top:-8px}.bar .bl{font-size:16px}.toggle{width:100%}.toggle button{flex:1 1 100%;padding:14px}.headline .c{padding:30px 10px}.rec{padding:28px 24px}textarea.letter{padding:20px;font-size:18px}.sh{margin-bottom:44px}}
+@media print{
+ body>*:not(#print){display:none!important}
+ #print{display:block;font-family:var(--sans);color:var(--navy);font-size:10.5px;line-height:1.45}
+ @page{size:letter;margin:.5in}
+ #print h1{font-family:var(--serif);font-weight:400;font-size:24px;margin:0}
+ #print .sub{color:var(--gold-d);font-family:var(--serif);font-style:italic;font-size:13px;margin:2px 0 10px}
+ #print h2{font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-d);margin:12px 0 4px;border-bottom:1px solid var(--gold);padding-bottom:3px}
+ #print table{width:100%;border-collapse:collapse}
+ #print td,#print th{padding:3px 6px;border-bottom:1px solid #e6e0d2;text-align:right}
+ #print td:first-child,#print th:first-child{text-align:left}
+ #print .cols{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+ #print .letter{white-space:pre-wrap;font-family:var(--serif);font-size:11px}
+ #print .foot{margin-top:14px;font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-d)}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="wordmark" href="#top">talk<span>Realty</span></a>
+  <nav class="links"><a href="#start">Goal</a><a href="#results">Results</a><a href="#plan">Game Plan</a><a href="#life">Whole Life</a><a href="#commit">Commit</a></nav>
+</div></header>
+
+<div class="hero" id="top">
+  <canvas id="stars"></canvas><div class="frame"></div>
+  <div class="in">
+    <div class="eyebrow">Cheers to 2027</div>
+    <hr class="rule">
+    <h1>Your Best Year<br><em>Starts Now</em></h1>
+    <p>The 12 Month Clarity Plan. Turn your goal into a weekly game plan.</p>
+    <a class="btn" href="#start">Begin Your Plan</a>
+  </div>
+</div>
+
+<section class="blk" id="start"><div class="wrap">
+  <div class="sh"><div class="num">I.</div><h2>Income &amp; Production</h2><p>Choose how you think about your year, then refine the numbers. Everything updates as you type.</p><hr class="rule"></div>
+  <div class="toggle" id="mode">
+    <button data-m="income" class="on">Income goal</button><button data-m="closings">Number of sales</button>
+  </div>
+  <div class="grid g3">
+    <div class="field"><label id="goalLabel">Income goal (take-home)</label><div class="box"><span class="pre" id="goalPre">$</span><input id="goal" inputmode="decimal" value="150,000"></div></div>
+    <div class="field"><label>Average sales price</label><div class="box"><span class="pre">$</span><input id="price" inputmode="decimal" value="850,000"></div></div>
+    <div class="field"><label>Commission rate</label><div class="box"><input id="rate" inputmode="decimal" value="2.5"><span class="suf">%</span></div></div>
+    <div class="field"><label>Your split after brokerage</label><div class="box"><input id="split" inputmode="decimal" value="70"><span class="suf">%</span></div></div>
+    <div class="field"><label>Avg commission per deal</label><div class="box"><span class="pre">$</span><input id="override" inputmode="decimal" placeholder="14,875"></div><div class="hint" id="calcHint">Calculated: $14,875. Type a number to override.</div></div>
+    <div class="field"><label>Last year's closings</label><div class="box"><input id="lastYear" inputmode="decimal" placeholder="Optional"></div></div>
+  </div>
+</div></section>
+
+<section class="blk cream" style="padding:56px 0"><div class="wrap">
+  <details class="adj"><summary>Adjust assumptions</summary><p class="adjnote">Example ratios, adjust to your own numbers. These are starting defaults, not industry data.</p>
+  <div class="grid g5">
+    <div class="field"><label>Closings per signed client</label><div class="box"><input id="closeRate" inputmode="decimal" value="80"><span class="suf">%</span></div></div>
+    <div class="field"><label>Signed per appointment</label><div class="box"><input id="apptRate" inputmode="decimal" value="50"><span class="suf">%</span></div></div>
+    <div class="field"><label>Conversations per appt</label><div class="box"><input id="convPerAppt" inputmode="decimal" value="10"></div></div>
+    <div class="field"><label>Dials per conversation</label><div class="box"><input id="dialsPerConv" inputmode="decimal" value="10"></div></div>
+    <div class="field"><label>Working weeks / year</label><div class="box"><input id="weeks" inputmode="decimal" value="48"></div></div>
+  </div></details>
+</div></section>
+
+<section class="blk" id="results"><div class="wrap">
+  <div class="sh"><div class="num">III.</div><h2>What It Takes</h2><p id="perDealLine"></p><hr class="rule"></div>
+  <div class="guard" id="guard"></div>
+  <div id="out">
+  <p class="expect-line" id="expectLine"></p>
+  <div class="headline">
+    <div class="c"><div class="v" id="hClosings"></div><div class="l">Closings per year</div><div class="d" id="hClosingsD"></div></div>
+    <div class="c"><div class="v" id="hDaily"></div><div class="l">Dials per day</div><div class="d">five-day week</div></div>
+    <div class="c"><div class="v" id="hIncome"></div><div class="l">Your income</div><div class="d">after split</div></div>
+    <div class="c"><div class="v" id="hVolume"></div><div class="l">Sales volume</div><div class="d" id="hGci"></div></div>
+  </div>
+  <div class="cards" id="cards"></div>
+  <ul class="coach" id="coachLines"></ul>
+  <div class="stretch" id="stretch"></div>
+  <div class="callout"><div class="k">Reality Check</div><p id="coaching"></p></div>
+  </div>
+</div></section>
+
+<section class="blk cream" id="plan"><div class="wrap">
+  <div class="sh"><div class="num">IV.</div><h2>Your Game Plan</h2><p>Personal recommendations, drawn from the numbers you entered.</p><hr class="rule"></div>
+  <div class="recs" id="recs"></div>
+</div></section>
+
+<section class="blk"><div class="wrap">
+  <div class="sh"><div class="num">V.</div><h2>What to Expect</h2><hr class="rule"></div>
+  <div class="expect">
+    <div><div class="n">i</div><h4>Results trail the work</h4><p>What you do today often shows up as closings roughly 60 to 120 days later. Keep going through the quiet stretch.</p></div>
+    <div><div class="n">ii</div><h4>Most conversations are a no</h4><p>That is normal. Every no moves you closer to the yes in your numbers.</p></div>
+    <div><div class="n">iii</div><h4>Consistency beats intensity</h4><p>A steady daily block outperforms occasional big pushes.</p></div>
+    <div><div class="n">iv</div><h4>Track weekly, adjust monthly</h4><p>Log your activity every week, then tune your ratios and plan once a month.</p></div>
+  </div>
+  <div class="small-caps">General coaching, not statistics</div>
+</div></section>
+
+<section class="blk cream"><div class="wrap">
+  <div class="sh"><div class="num">VI.</div><h2>Where Your Deals Come From</h2><p>Your primary lead sources. Enter the share of deals you expect from each.</p><hr class="rule"></div>
+  <div class="grid g5" id="mixInputs"></div>
+  <div class="mixwarn" id="mixWarn"></div>
+  <div class="bars" id="bars"></div>
+  <div class="tips" id="tips"></div>
+</div></section>
+
+<section class="blk" id="life"><div class="wrap">
+  <div class="sh"><div class="num">VII.</div><h2>The Whole Life Plan</h2><p>Production is only part of the year. Plan the rest with the same intention.</p><hr class="rule"></div>
+  <div class="grid g2">
+    <div class="field wide"><label>Biggest behavior I must change</label><div class="box"><input class="txt" id="behavior" placeholder="The one behavior that changes everything"></div></div>
+  </div>
+  <h3 class="note" style="margin-top:70px">Health &amp; Energy</h3>
+  <div class="grid g4">
+    <div class="field"><label>Fitness now (1–10)</label><div class="box"><input id="fitNow" inputmode="numeric" placeholder="—"></div></div>
+    <div class="field"><label>Target fitness (1–10)</label><div class="box"><input id="fitTarget" inputmode="numeric" placeholder="—"></div></div>
+    <div class="field"><label>Workouts per week</label><div class="box"><input id="workouts" inputmode="numeric" placeholder="—"></div></div>
+    <div class="field"><label>One habit I must change</label><div class="box"><input class="txt" id="habit" placeholder="Your habit"></div></div>
+  </div>
+  <h3 class="note" style="margin-top:70px">Family &amp; Relationships</h3>
+  <div class="grid g2">
+    <div class="field"><label>Weekly quality time goal (hours)</label><div class="box"><input id="family" inputmode="decimal" placeholder="—"></div></div>
+    <div class="field"><label>One relationship I will intentionally improve</label><div class="box"><input class="txt" id="relationship" placeholder="Who and how"></div></div>
+  </div>
+</div></section>
+
+<section class="blk cream"><div class="wrap">
+  <div class="sh"><div class="num">VIII.</div><h2>A Letter to Your Future Self</h2><p>Date it 12 months from today, and write as if you achieved everything above.</p><hr class="rule"></div>
+  <div class="prompts"><span>Income earned</span><span>Skills mastered</span><span>Health level</span><span>Relationships improved</span><span>What you are most proud of</span></div>
+  <textarea class="letter" id="letter" placeholder="Dear me, it's one year from today..."></textarea>
+</div></section>
+
+<section class="blk" id="commit"><div class="wrap">
+  <div class="sh"><div class="num">IX.</div><h2>My Commitment</h2><hr class="rule"></div>
+  <div class="grid g2">
+    <div class="field"><label>Your name</label><div class="box"><input class="txt" id="agentName" placeholder="Your name"></div></div>
+    <div class="field"><label>My weekly non-negotiable</label><div class="box"><input class="txt" id="nonNeg" placeholder="e.g. five prospecting blocks, no matter what"></div></div>
+  </div>
+  <div class="pledge" id="pledge"></div>
+</div></section>
+
+<section class="blk cream"><div class="wrap">
+  <div class="sh"><div class="num">X.</div><h2>Next Steps</h2><hr class="rule"></div>
+  <div class="checks" id="checks"></div>
+  <div class="printrow"><button class="btn solid" onclick="window.print()">Print / Save as PDF</button><div class="small-caps">Nothing you type is saved or sent anywhere</div></div>
+</div></section>
+
+<footer>
+  <div class="wordmark">talk<span>Realty</span></div>
+  <hr class="rule">
+  <div class="tag">Built for the Talk Realty team</div>
+  <small>Example ratios are starting defaults, not industry data. Adjust them to your own numbers.</small>
+</footer>
+
+<div id="print"></div>
+
+<script>
+const $=id=>document.getElementById(id);
+const num=s=>{const v=parseFloat(String(s||"").replace(/[$,%\s]/g,""));return isFinite(v)?v:0};
+const money=n=>"$"+Math.round(n).toLocaleString("en-US");
+const up=n=>n<10?(Math.ceil(n*10-1e-9)/10).toFixed(1):Math.ceil(n-1e-9).toLocaleString("en-US");
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let mode="income";
+const SOURCES=["Sphere","Online","Open houses","Social Media","Other"];
+const DEF_MIX={Sphere:40,Online:25,"Open houses":15,"Social Media":15,Other:5};
+const TIPS={Sphere:"Touch your top 50 people every month with something useful, and ask for referrals out loud.",Online:"Speed to lead wins. Call new leads within 5 minutes and keep a follow-up plan for the long tail.","Open houses":"Host on a schedule, collect every visitor's contact, and follow up within 24 hours.","Social Media":"Post consistently, show local market knowledge, and move comments into real conversations.",Other:"Name the source, give it a weekly action, and track what it actually produces."};
+const STEPS=["Put my daily prospecting block on my calendar","Set up a weekly tracker for dials, conversations and appointments","Replace the example ratios with my real numbers after 30 days","Print this plan and review it with Christopher each quarter"];
+$("mixInputs").innerHTML=SOURCES.map((k,i)=>`<div class="field"><label>${k}</label><div class="box"><input id="mix${i}" inputmode="decimal" value="${DEF_MIX[k]}"><span class="suf">%</span></div></div>`).join("");
+$("checks").innerHTML=STEPS.map(s=>`<label class="check"><input type="checkbox"><span>${s}</span></label>`).join("");
+document.querySelectorAll("#mode button").forEach(b=>b.onclick=()=>{
+  mode=b.dataset.m;document.querySelectorAll("#mode button").forEach(x=>x.classList.toggle("on",x===b));
+  const g=$("goal");
+  if(mode==="income"){$("goalLabel").textContent="Income goal (take-home)";$("goalPre").style.display="";g.value="150,000"}
+  else if(mode==="volume"){$("goalLabel").textContent="Sales volume goal";$("goalPre").style.display="";g.value="10,000,000"}
+  else{$("goalLabel").textContent="Closings goal";$("goalPre").style.display="none";g.value="12"}
+  calc();
+});
+function calc(){
+  const price=num($("price").value),rate=num($("rate").value),split=num($("split").value),ov=num($("override").value);
+  const computedPerDeal=price*(rate/100)*(split/100);
+  const perDeal=ov>0?ov:computedPerDeal;
+  const gciPerDeal=price*(rate/100);
+  const g=num($("goal").value);
+  let raw=0;
+  if(mode==="income")raw=perDeal>0?g/perDeal:0;else if(mode==="volume")raw=price>0?g/price:0;else raw=g;
+  const closeRate=num($("closeRate").value),apptRate=num($("apptRate").value),cpa=num($("convPerAppt").value),dpc=num($("dialsPerConv").value);
+  const wkRaw=num($("weeks").value);
+  const miss=[];
+  if(g<=0)miss.push(mode==="income"?"your income goal":mode==="volume"?"your sales volume goal":"your closings goal");
+  if(price<=0)miss.push("an average sales price");
+  if(ov<=0&&rate<=0)miss.push("a commission rate");
+  if(ov<=0&&split<=0)miss.push("your split");
+  if(rate>100||split>100)miss.push("a commission rate and split of 100% or less");
+  if(closeRate<=0||closeRate>100)miss.push("a close rate between 1 and 100%");
+  if(apptRate<=0||apptRate>100)miss.push("an appointment-to-signed rate between 1 and 100%");
+  if(cpa<=0)miss.push("conversations per appointment");
+  if(dpc<=0)miss.push("dials per conversation");
+  if(wkRaw<1||wkRaw>52)miss.push("working weeks between 1 and 52");
+  if(miss.length){
+    const list=miss.length>1?miss.slice(0,-1).join(", ")+" and "+miss[miss.length-1]:miss[0];
+    $("guard").textContent=`Add ${list} to see your plan.`;$("guard").classList.add("on");$("out").classList.add("off");
+    $("perDealLine").textContent=computedPerDeal>0?`Your average take-home per deal is ${money(perDeal)}.`:"Fill in your numbers above and your plan builds itself.";
+    $("calcHint").textContent=computedPerDeal>0?`Calculated: ${money(computedPerDeal)}. Type a number to override.`:"Calculated from price, rate and split.";
+    $("recs").innerHTML=`<div class="rec"><div class="tag">Waiting on your numbers</div><h4>Your recommendations appear here</h4><p>Complete the goal and funnel fields above.</p></div>`;
+    $("bars").innerHTML="";$("tips").innerHTML="";$("mixWarn").textContent="";$("stretch").textContent="";
+    return;
+  }
+  $("guard").classList.remove("on");$("out").classList.remove("off");
+  const closings=Math.ceil(raw-1e-9);
+  const signed=Math.ceil(closings/(closeRate/100)-1e-9);
+  const appts=Math.ceil(signed/(apptRate/100)-1e-9);
+  const convos=Math.ceil(appts*cpa-1e-9);
+  const dials=Math.ceil(convos*dpc-1e-9);
+  const wk=wkRaw;
+  const netIncome=closings*perDeal,gci=closings*gciPerDeal,volume=closings*price,dailyDials=dials/wk/5;
+  $("override").placeholder=Math.round(computedPerDeal).toLocaleString("en-US");
+  $("calcHint").textContent=`Calculated: ${money(computedPerDeal)}. Type a number to override.`;
+  $("perDealLine").textContent=`Your average take-home per deal is ${money(perDeal)}. Here is the activity behind your goal.`;
+  $("hClosings").textContent=closings.toLocaleString("en-US");
+  $("hClosingsD").textContent=`${up(closings/12)} per month`;
+  $("hDaily").textContent=up(dailyDials);
+  $("hIncome").textContent=money(netIncome);
+  $("hVolume").textContent=volume>=1e6?"$"+(volume/1e6).toFixed(2)+"M":money(volume);
+  $("hGci").textContent=`${money(gci)} gross commission`;
+  const rows=[["Closings",closings],["Signed clients",signed],["Appointments",appts],["Conversations",convos],["Dials / contacts",dials]];
+  $("cards").innerHTML=rows.map(([l,v])=>`<div class="card"><h3>${l}</h3><div class="yr">${v.toLocaleString("en-US")}</div><div class="yl">per year</div><div class="split"><div><b>${up(v/12)}</b><small>Month</small></div><div><b>${up(v/wk)}</b><small>Week</small></div></div></div>`).join("")+
+    `<div class="card daily"><h3>Every weekday</h3><div class="yr">${up(dailyDials)}</div><div class="yl">dials per day</div><div class="split"><div><b>${up(convos/wk/5)}</b><small>Convos</small></div><div><b>${up(appts/wk)}</b><small>Appts / wk</small></div></div></div>`;
+  $("coaching").textContent=dailyDials>60?"That is a heavy daily outreach load. Consider raising your average price, lifting a conversion ratio with better follow-up, or leaning harder on sphere and referrals.":dailyDials>25?"Doable with a protected daily prospecting block. Put it on your calendar first, before anything else.":"Very achievable. Consistency is the whole game, so lock in a daily time block and track it weekly.";
+  $("expectLine").innerHTML=`To hit your goal, expect <b>${closings} deal${closings===1?"":"s"}</b> this year, <b>${up(appts/12)} appointments a month</b>, <b>${up(appts/wk)} a week</b>, and about <b>${up(convos/wk/5)} conversations a day</b>.`;
+  $("coachLines").innerHTML=[
+    `You need <b>${up(appts/wk)} appointments a week</b>, about <b>${up(convos/wk/5)} conversations a day</b>.`,
+    `That is <b>${up(dials/wk/5)} dials each weekday</b>, or ${up(dials/wk)} a week across ${wk} working weeks.`,
+    `At your ratios, about <b>${up(appts/Math.max(closings,1))} appointments</b> turn into one closing.`,
+    `Each closing is worth <b>${money(perDeal)}</b> to you, so every appointment is worth about <b>${money(closings*perDeal/Math.max(appts,1))}</b>.`
+  ].map(t=>`<li>${t}</li>`).join("");
+  // mix
+  const mix=SOURCES.map((k,i)=>({k,v:Math.max(num($("mix"+i).value),0)}));
+  const total=mix.reduce((a,b)=>a+b.v,0);
+  $("mixWarn").textContent=total<=0?"Enter the share of deals you expect from each source.":Math.round(total)!==100?`Your mix adds up to ${Math.round(total)}%. Adjust it so it totals 100%.`:"";
+  const deals=mix.map(m=>({k:m.k,d:total>0?closings*(m.v/total):0,a:total>0?appts*(m.v/total):0,s:total>0?m.v/total*100:0}));
+  const maxD=Math.max(...deals.map(d=>d.d),0.0001);
+  $("bars").innerHTML=deals.map(d=>`<div class="bar"><div class="bl">${d.k}</div><div class="track"><div class="fill" style="width:${d.d/maxD*100}%"></div></div><div class="bv">${up(d.d)} deals · ${up(d.a)} appts / yr</div></div>`).join("");
+  $("tips").innerHTML=mix.filter(m=>m.v>0).map(m=>`<div class="tip"><h5>${m.k}</h5><p>${TIPS[m.k]}</p></div>`).join("");
+  // recs
+  const blockHours=dailyDials<=25?1:dailyDials<=60?2:3;
+  const top=deals.reduce((a,b)=>b.s>a.s?b:a,{k:"",s:0});
+  const betterAppt=Math.min(apptRate+10,100);
+  const apptsAlt=Math.ceil(signed/(betterAppt/100)-1e-9);
+  const dialsAlt=Math.ceil(Math.ceil(apptsAlt*cpa-1e-9)*dpc-1e-9);
+  const perDealAlt=(price+100000)*(rate/100)*(split/100);
+  const closingsAlt=mode==="income"&&perDealAlt>0&&ov<=0?Math.ceil(g/perDealAlt-1e-9):closings;
+  const recs=[{t:"Time",h:`Block ${blockHours} hour${blockHours>1?"s":""} of prospecting every weekday morning`,p:`That covers about ${up(dailyDials)} dials a day. Treat it like a client appointment you never cancel.`}];
+  if(top.s>50)recs.push({t:"Lead mix",w:1,h:`${top.k} is ${Math.round(top.s)}% of your plan`,p:"Over half your deals from one source is a risk. Build a second source so one slow season does not sink the year."});
+  if(betterAppt>apptRate&&dialsAlt<dials)recs.push({t:"Conversion",h:`Raise signed per appointment from ${apptRate}% to ${betterAppt}%`,p:`That alone drops you from ${dials.toLocaleString("en-US")} to ${dialsAlt.toLocaleString("en-US")} dials a year. Sharpen your consult before you add more calls.`});
+  if(closingsAlt<closings)recs.push({t:"Price point",h:`A $100,000 higher average price cuts you to ${closingsAlt} closings`,p:"Working a higher price point, or improving your split, gets the same income from fewer deals."});
+  else recs.push({t:"Price point",h:"Check your price point and split",p:"A higher average price or a better split means fewer deals for the same income."});
+  $("recs").innerHTML=recs.map(r=>`<div class="rec${r.w?" warn":""}"><div class="tag">${r.t}</div><h4>${r.h}</h4><p>${r.p}</p></div>`).join("");
+  // stretch
+  const ly=num($("lastYear").value);
+  const gap=ly<=0?"":closings<=ly?`Your goal of ${closings} is at or below last year's ${ly}. Consider a stretch.`:closings/ly<=1.5?`That is ${closings-ly} more closings than last year, a ${Math.round((closings/ly-1)*100)}% stretch. Solid and reachable with steady activity.`:`That is ${closings-ly} more closings than last year, a ${Math.round((closings/ly-1)*100)}% jump. Big leap, so the activity plan matters most.`;
+  $("stretch").textContent=gap;
+  const name=$("agentName").value.trim(),nn=$("nonNeg").value.trim();
+  $("pledge").textContent=name&&nn?`“I, ${name}, commit to ${nn} every week in 2027.”`:"";
+  // print
+  const v=id=>esc($(id).value.trim()||"—");
+  const goalTxt=mode==="income"?money(g)+" income":mode==="volume"?money(g)+" volume":g+" closings";
+  $("print").innerHTML=`<h1>${name?esc(name)+"'s ":""}12 Month Clarity Plan</h1><div class="sub">Cheers to 2027 · talk Realty</div>
+  <div>Goal: <b>${goalTxt}</b> · ${money(perDeal)} per deal · ${money(volume)} volume · ${money(gci)} gross commission · ${money(netIncome)} income</div>
+  <h2>Activity plan</h2><table><tr><th>Activity</th><th>Year</th><th>Month</th><th>Week</th></tr>${rows.map(([l,x])=>`<tr><td>${l}</td><td>${x.toLocaleString("en-US")}</td><td>${up(x/12)}</td><td>${up(x/wk)}</td></tr>`).join("")}</table>
+  <div style="margin-top:4px">Daily: <b>${up(dailyDials)} dials</b>, ${blockHours} hour prospecting block. ${esc(gap)}</div>
+  <div class="cols"><div><h2>Lead sources</h2>${deals.map(d=>`${d.k}: ${Math.round(d.s)}% · ${up(d.d)} deals · ${up(d.a)} appts`).join("<br>")}</div>
+  <div><h2>Game plan</h2>${recs.map(r=>"• "+esc(r.h)).join("<br>")}</div></div>
+  <div class="cols"><div><h2>Whole life</h2>Behavior to change: ${v("behavior")}<br>Fitness: ${v("fitNow")} → ${v("fitTarget")}, ${v("workouts")} workouts/week<br>Habit: ${v("habit")}<br>Quality time: ${v("family")} hrs/week<br>Relationship: ${v("relationship")}</div>
+  <div><h2>Commitment</h2>${name&&nn?`I, ${esc(name)}, commit to ${esc(nn)} every week in 2027.`:"Weekly non-negotiable: "+v("nonNeg")}</div></div>
+  ${$("letter").value.trim()?`<h2>Future Self Letter</h2><div class="letter">${esc($("letter").value.trim())}</div>`:""}
+  <div class="foot">Built for the Talk Realty team · example ratios, not industry data</div>`;
+}
+document.addEventListener("input",calc);
+// format money inputs on blur
+["goal","price","override"].forEach(id=>$(id).addEventListener("blur",e=>{const n=num(e.target.value);if(n>0)e.target.value=n.toLocaleString("en-US")}));
+calc();
+// sparkle
+(function(){const c=$("stars"),x=c.getContext("2d");let W,H,S=[];const dpr=window.devicePixelRatio||1;
+function size(){W=c.clientWidth;H=c.clientHeight;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);
+let seed=7;const r=()=>{seed=(seed*9301+49297)%233280;return seed/233280};S=[];const n=Math.round(W*H/6000);
+for(let i=0;i<n;i++)S.push({x:r()*W,y:r()*H,r:r()*1.4+.4,p:r()*6.28,s:.4+r()*.9})}
+function draw(t){x.clearRect(0,0,W,H);for(const s of S){const a=.25+.7*Math.pow((Math.sin(t/1600*s.s+s.p)+1)/2,3);x.globalAlpha=a;x.fillStyle="#C9A96E";x.beginPath();x.arc(s.x,s.y,s.r,0,6.283);x.fill();
+if(s.r>1.15&&a>.55){x.globalAlpha=a*.5;x.fillRect(s.x-4,s.y-.25,8,.5);x.fillRect(s.x-.25,s.y-4,.5,8)}}requestAnimationFrame(draw)}
+size();addEventListener("resize",size);requestAnimationFrame(draw)})();
+</script>
+</body>
+</html>
